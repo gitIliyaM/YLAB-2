@@ -1,0 +1,13 @@
+db:
+  driver: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/appdb
+  username: user
+  password: pass
+  pool:
+    maxSize: 10
+    minIdle: 2
+    connectionTimeout: 30000
+
+liquibase:
+  changelog-file: classpath:db/changelog/db.changelog-master.xml
+  default-schema: app

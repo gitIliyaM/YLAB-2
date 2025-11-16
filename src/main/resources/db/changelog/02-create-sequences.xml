@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="02-create-product-seq" author="developer">
+        <sql>CREATE SEQUENCE IF NOT EXISTS app_schema.product_id_seq START WITH 1 INCREMENT BY 1;</sql>
+    </changeSet>
+
+    <changeSet id="02-create-audit-seq" author="developer">
+        <sql>CREATE SEQUENCE IF NOT EXISTS app_schema.audit_log_id_seq START WITH 1 INCREMENT BY 1;</sql>
+    </changeSet>
+
+</databaseChangeLog>

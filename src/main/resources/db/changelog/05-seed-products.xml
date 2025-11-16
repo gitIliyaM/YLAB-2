@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="05-seed-initial-products" author="developer">
+        <sql>
+            INSERT INTO app_schema.products (name, category, brand, price, description) VALUES
+                ('Laptop', 'Electronics', 'TechBrand', 999.99, 'A high-performance laptop'),
+                ('Coffee Mug', 'Home &amp; Kitchen', 'CupCo', 12.50, 'A ceramic coffee mug'),
+                ('Running Shoes', 'Sports', 'RunFast', 89.99, 'Comfortable running shoes');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

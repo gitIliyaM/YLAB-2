@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="04-create-product-indexes" author="developer">
+        <createIndex tableName="products" schemaName="app_schema" indexName="idx_products_category">
+            <column name="category"/>
+        </createIndex>
+        <createIndex tableName="products" schemaName="app_schema" indexName="idx_products_brand">
+            <column name="brand"/>
+        </createIndex>
+        <createIndex tableName="products" schemaName="app_schema" indexName="idx_products_price">
+            <column name="price"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="04-create-audit-indexes" author="developer">
+        <createIndex tableName="audit_log" schemaName="app_schema" indexName="idx_audit_timestamp">
+            <column name="timestamp"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

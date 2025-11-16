@@ -1,14 +1,14 @@
-package YLab.model;
+package y_lab.model;
 
 public class Product {
-    private String id;
+    private long id;
     private String name;
     private String category;
     private String brand;
     private double price;
     private String description;
 
-    public Product(String id, String name, String category, String brand, double price, String description) {
+    public Product(long id, String name, String category, String brand, double price, String description) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -17,7 +17,8 @@ public class Product {
         this.description = description;
     }
 
-    public String getId() { return id; }
+    // Getters
+    public long getId() { return id; }
     public String getName() { return name; }
     public String getCategory() { return category; }
     public String getBrand() { return brand; }
@@ -27,7 +28,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", brand='" + brand + '\'' +
