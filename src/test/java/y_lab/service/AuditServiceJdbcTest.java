@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
