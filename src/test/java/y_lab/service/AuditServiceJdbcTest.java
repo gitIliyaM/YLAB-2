@@ -14,6 +14,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
@@ -46,17 +47,15 @@ public class AuditServiceJdbcTest {
     }
 
     @BeforeEach
-    void setUpEach() {
+    void setUpEach() throws Exception {
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute("DELETE FROM app_schema.audit_log");
+        }
         auditService = new AuditServiceJdbc(connection);
     }
 
     @AfterEach
     void cleanUpEach() throws Exception {
-        try (Statement stmt = connection.createStatement()) {
-            stmt.execute("DELETE FROM app_schema.audit_log");
-            // Опционально: очистка products, если используется
-            stmt.execute("DELETE FROM app_schema.products");
-        }
     }
 
     @Test
